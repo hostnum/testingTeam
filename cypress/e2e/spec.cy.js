@@ -18,4 +18,12 @@ describe('template spec', () => {
 
 
   })
+  it("show no error",() => {
+    cy.visit("https://petstore.octoperf.com/actions/Catalog.action")
+    cy.contains("Sign In").click()
+    cy.get('input[name="username"]').type("invalid email")
+    cy.get('[name="signon"]').click()
+    cy.get('[name="signon"]').should('be.visible')
+
+  })
 })
