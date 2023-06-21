@@ -23,7 +23,7 @@ describe('template spec', () => {
     cy.contains("Sign In").click()
     cy.get('input[name="username"]').type("invalid email")
     cy.get('[name="signon"]').click()
-    cy.get('[name="signon"]').should('be.visible')
+    cy.get('[name="signon"]').should('be.visible').and().should('be.enabled')
 
   })
 })
